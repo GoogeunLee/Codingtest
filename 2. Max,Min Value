@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main()
+{
+	int max = -1000000; //보다 커야함
+	int min = 1000000; //보다 작아야함
+	int N; //정수의 입력 갯수
+	int i;
+	int A;
+
+	scanf("%d", &N);
+
+	for (i = 0; i < N; i++) // N만큼 반복
+	{
+		scanf("%d", &A); //N개의 갯수만큼 정수 입력가능
+
+		if (max < A) // 보다 크면 MAX값
+		{
+			max = A;
+		}
+		if (min > A) //보다 작으면 MIN값
+		{
+			min = A;
+		}
+	}
+	printf("%d %d", min, max);
+
+	return 0;
+}
