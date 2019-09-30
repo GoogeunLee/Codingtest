@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main()
+{
+	int i;
+	int num[10] = { 0, };
+	int num1[42] = { 0, };
+	int cnt = 0;
+
+	for (i = 0; i < 10; i++)
+	{
+		scanf("%d", &num[i]);
+		num1[num[i] % 42]++; //나머지들을 num1에 저장해서 카운트함
+
+	}
+
+	for (i = 0; i < 42; i++)
+	{
+		if (num1[i] > 0) //카운트된 나머지
+		{
+			cnt++;
+		}
+		else if (num1[i] > 1) //중복된 나머지들을 1개로 구분해야함
+		{
+			cnt = ++cnt - num1[i]; //하나만 돌려주고 다시 cnt에서 뺌
+		}
+	}
+	printf("%d", cnt);
+
+	return 0;
+}
